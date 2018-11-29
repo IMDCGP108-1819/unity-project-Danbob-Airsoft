@@ -37,10 +37,10 @@ GameObject:
   - component: {fileID: 212480051150834176}
   - component: {fileID: 50695876600825514}
   - component: {fileID: 114368729270929536}
-  - component: {fileID: 60642077132934864}
+  - component: {fileID: 60562352019379006}
   m_Layer: 0
   m_Name: Star Skipper
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1073103917130984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.61, y: 0.37, z: 0}
+  m_LocalPosition: {x: 1.05, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4851572601074020}
@@ -95,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1292790723050574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -66.049995, y: -4.6869917, z: 0}
+  m_LocalPosition: {x: -149.14003, y: -34.596367, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4545328264306508}
@@ -154,16 +154,16 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
-  m_LinearDrag: 1
-  m_AngularDrag: 1
+  m_Mass: 1
+  m_LinearDrag: 1.5
+  m_AngularDrag: 1.5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &60642077132934864
+--- !u!60 &60562352019379006
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,7 +178,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 2.6599998, y: 1.02, z: 3.9299998, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.58238935, y: 0.55950344}
     oldSize: {x: 11.52, y: 6.48}
     newSize: {x: 11.52, y: 6.48}
     adaptiveTilingThreshold: 0.5
@@ -187,35 +187,34 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.63012695, y: -0.7656622}
-      - {x: -1.1421967, y: -0.7649765}
-      - {x: -0.89, y: -0.53999996}
-      - {x: -0.59999996, y: -0.16}
-      - {x: 0.64, y: -0.16}
-      - {x: 1.64, y: 0.32}
-      - {x: 1.66, y: 0.35}
-      - {x: 1.66, y: 0.44}
-      - {x: 0.61, y: 0.96999997}
-      - {x: -0.61, y: 0.96999997}
-      - {x: -0.95, y: 1.35}
-      - {x: -1.09, y: 1.48}
-      - {x: -0.53999996, y: 1.48}
-      - {x: -0.51, y: 1.51}
-      - {x: -0.51, y: 1.54}
-      - {x: -0.53999996, y: 1.5699999}
-      - {x: -1.16, y: 1.5699999}
-      - {x: -2.37, y: 2.8899999}
-      - {x: -2.4099998, y: 2.8899999}
-      - {x: -2.44, y: 2.86}
-      - {x: -2.7, y: 1.22}
-      - {x: -2.7, y: -0.44}
-      - {x: -2.4199998, y: -0.41}
-      - {x: -2.4299998, y: -2.07}
-      - {x: -2.3899999, y: -2.09}
-      - {x: -2.33, y: -2.09}
-      - {x: -1.9599999, y: -1.68}
-      - {x: -1.25, y: -0.88}
-      - {x: -0.62, y: -0.88}
+    - - {x: -1.4991254, y: -1.1855823}
+      - {x: -1.8391253, y: -0.92558223}
+      - {x: -1.5491253, y: -0.54558223}
+      - {x: -0.30912536, y: -0.54558223}
+      - {x: 0.69087464, y: -0.065582275}
+      - {x: 0.7108746, y: -0.035582274}
+      - {x: 0.7108746, y: 0.054417722}
+      - {x: -0.33912537, y: 0.5844177}
+      - {x: -1.5591253, y: 0.5844177}
+      - {x: -1.8991253, y: 0.9644177}
+      - {x: -2.0391252, y: 1.0944177}
+      - {x: -1.4891254, y: 1.0944177}
+      - {x: -1.4591253, y: 1.1244177}
+      - {x: -1.4591253, y: 1.1544178}
+      - {x: -1.4891254, y: 1.1844177}
+      - {x: -2.1091254, y: 1.1844177}
+      - {x: -3.3191252, y: 2.5044177}
+      - {x: -3.3591254, y: 2.5044177}
+      - {x: -3.3891253, y: 2.4744177}
+      - {x: -3.6491253, y: 0.8344177}
+      - {x: -3.6491253, y: -0.82558227}
+      - {x: -3.3691254, y: -0.79558223}
+      - {x: -3.3791254, y: -2.4555821}
+      - {x: -3.3391254, y: -2.4755821}
+      - {x: -3.2791252, y: -2.4755821}
+      - {x: -2.9091253, y: -2.0655823}
+      - {x: -2.1991253, y: -1.2655822}
+      - {x: -1.5691253, y: -1.2655822}
 --- !u!81 &81063631274533770
 AudioListener:
   m_ObjectHideFlags: 1
@@ -234,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593b185e5f8b5a54ba5eddf69730a517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 45
+  movespeed: 30
   rotatespeed: 50
   MoveHelp: {fileID: 1073103917130984}
   rigidBody: {fileID: 50695876600825514}

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50070019376975320}
   m_Layer: 0
   m_Name: Asteroid1
-  m_TagString: Untagged
+  m_TagString: World
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,13 +35,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1315134201934634}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4815028, y: 4.049025, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.8241262, w: 0.56640637}
+  m_LocalPosition: {x: -20.181908, y: -24.379993, z: 9.640625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -111}
 --- !u!50 &50070019376975320
 Rigidbody2D:
   serializedVersion: 4
@@ -49,7 +49,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1315134201934634}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

@@ -8,8 +8,18 @@ public class PlayerMovement : MonoBehaviour
     public GameObject MoveHelp;
     private Vector2 MoveDirection;
     private Vector3 TempMove;
+    private PlayerShooting ShootScript;
+    public float LaserSpeed;
+    private bool CanFire = true;
+    public float FireDelay;
+    public Vector3 PlayerRotation;
 
     public Rigidbody2D rigidBody;
+
+    void Start()
+    {
+        ShootScript = gameObject.GetComponentInChildren<PlayerShooting>();    
+    }
 
     void FixedUpdate()
     {
@@ -30,6 +40,22 @@ public class PlayerMovement : MonoBehaviour
         //this.transform.Translate(moveVector * movespeed * Time.deltaTime, 0f, 0f);
 
         //On Horizontal input rotates the prefab with rotation speed
-        this.transform.Rotate(0f, 0f, -rotateVector * rotatespeed  * Time.deltaTime);
+        this.transform.Rotate(0f, 0f, -rotateVector * rotatespeed * Time.deltaTime);
+        PlayerRotation = this.transform.rotation.eulerAngles;
+
+        //If Space Pressed- Shoot
+        if (Input.GetAxisRaw("Fire1") == 1 && CanFire)
+        {
+            StartCoroutine(FireLaser());
+        }
     }
+
+    private IEnumerator FireLaser()
+    {
+        CanFire = false;
+        ShootScript.Firing(LaserSpeed, MoveDirection, PlayerRotation);
+        yield return new WaitForSeconds(FireDelay);
+        CanFire = true;
+    }
+        
 }
