@@ -26,6 +26,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1082261426036862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4853235309680542}
+  - component: {fileID: 114190308998247568}
+  m_Layer: 0
+  m_Name: Cannon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1292790723050574
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,13 +111,27 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1292790723050574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -149.14003, y: -34.596367, z: 0}
+  m_LocalPosition: {x: -59.84456, y: -14.222917, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4545328264306508}
   - {fileID: 4324119503598128}
+  - {fileID: 4853235309680542}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4853235309680542
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1082261426036862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.03, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4851572601074020}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20354436057229502
 Camera:
@@ -222,6 +252,18 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318801402609558}
   m_Enabled: 1
+--- !u!114 &114190308998247568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1082261426036862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f735f3a7bec3a3c489180df5ee912e17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Laser: {fileID: 1683214575080320, guid: 33b3df39d458de044b893f3c3a7271c3, type: 2}
 --- !u!114 &114368729270929536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,6 +278,9 @@ MonoBehaviour:
   movespeed: 30
   rotatespeed: 50
   MoveHelp: {fileID: 1073103917130984}
+  LaserSpeed: 500
+  FireDelay: 0.5
+  PlayerRotation: {x: 0, y: 0, z: 0}
   rigidBody: {fileID: 50695876600825514}
 --- !u!212 &212480051150834176
 SpriteRenderer:
