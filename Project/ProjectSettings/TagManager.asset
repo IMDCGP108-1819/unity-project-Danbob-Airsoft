@@ -9,6 +9,7 @@ TagManager:
   - Inner Barrier
   - Outer Barrier
   - Enemy
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

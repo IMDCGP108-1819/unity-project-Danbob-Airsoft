@@ -111,7 +111,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1964774401921460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.68, y: -0.03, z: 0}
+  m_LocalPosition: {x: 1.21, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4823589551484790}
@@ -124,7 +124,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1727093272815214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -60.480145, y: -32.82539, z: 0}
+  m_LocalPosition: {x: -100.07677, y: -36.032875, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4388312877372958}
@@ -327,8 +327,8 @@ MonoBehaviour:
   movespeed: 25
   rotatespeed: 50
   MoveHelp: {fileID: 1953506187209094}
-  LaserSpeed: 500
-  FireDelay: 1
+  LaserSpeed: 1000
+  FireDelay: 0.1
   PlayerRotation: {x: 0, y: 0, z: 0}
   rigidBody: {fileID: 50985481739762246}
 --- !u!212 &212110599224318000
