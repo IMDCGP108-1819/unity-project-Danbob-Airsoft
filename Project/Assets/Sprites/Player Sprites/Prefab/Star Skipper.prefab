@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 50695876600825514}
   - component: {fileID: 114368729270929536}
   - component: {fileID: 60562352019379006}
+  - component: {fileID: 114734227937150036}
   m_Layer: 0
   m_Name: Star Skipper
   m_TagString: Player
@@ -111,7 +112,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1292790723050574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -89.30599, y: -39.40931, z: 0}
+  m_LocalPosition: {x: -25.331173, y: -40.764275, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4545328264306508}
@@ -282,6 +283,22 @@ MonoBehaviour:
   FireDelay: 0.2
   PlayerRotation: {x: 0, y: 0, z: 0}
   rigidBody: {fileID: 50695876600825514}
+--- !u!114 &114734227937150036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292790723050574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13513b07119c1da4783dd7749f065fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 3
+  GameOverCamera: {fileID: 0}
+  GameOverCanvas: {fileID: 0}
+  PlayerCam: {fileID: 0}
+  Spawner: {fileID: 0}
 --- !u!212 &212480051150834176
 SpriteRenderer:
   m_ObjectHideFlags: 1
