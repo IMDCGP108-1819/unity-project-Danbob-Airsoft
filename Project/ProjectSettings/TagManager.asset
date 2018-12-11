@@ -10,6 +10,11 @@ TagManager:
   - Outer Barrier
   - Enemy
   - SpawnPoint
+  - CapitalShip
+  - Laser
+  - UpperCannon
+  - LowerCannon
+  - EnemyLaser
   layers:
   - Default
   - TransparentFX

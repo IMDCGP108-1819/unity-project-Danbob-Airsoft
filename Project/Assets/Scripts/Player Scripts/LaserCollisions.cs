@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class LaserCollisions : MonoBehaviour
 {
+    private void OnEnable()
+    {
+        Invoke("OnTiggerEnter2D", 2f);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Collisions with none enemy objects destroy laser only
-        if (collision.gameObject.tag == "World")
-        {
-            Destroy(this.gameObject);
-        }
-        if (collision.gameObject.tag == "Inner Barrier")
-        {
-            Destroy(this.gameObject);
-        }
-        if (collision.gameObject.tag == "Planet")
+        if (collision.gameObject.tag == "World" || collision.gameObject.tag == "Inner Barrier" || collision.gameObject.tag == "Planet")
         {
             Destroy(this.gameObject);
         }
 
+        //Collisions with Enemies destroys both the laser and the enemy
         if (collision.gameObject.tag == "Enemy")
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
             Destroy(this.gameObject);
         }
+    }
+    void OnDisable()
+    {
+        CancelInvoke();
     }
 }

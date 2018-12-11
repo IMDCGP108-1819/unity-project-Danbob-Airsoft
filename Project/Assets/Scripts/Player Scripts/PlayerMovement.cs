@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(FireLaser());
         }
     }
-
+    //Prevnting Constant firing
     private IEnumerator FireLaser()
     {
         CanFire = false;

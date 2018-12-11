@@ -11,9 +11,16 @@ public class ShipSelector : MonoBehaviour {
     public GameObject TX21;
     public Camera SelectionCamera;
     private Camera FastCam;
-    public Camera SlowCam;
+    private Camera SlowCam;
+    public GameObject CapitalSpawner;
+    public GameObject ShipSpawner;
 
     private GameObject SpawnedShip;
+
+    private void Start()
+    {
+        Time.timeScale = 0;
+    }
 
     public void StarSkipperButton()
     {
@@ -27,6 +34,8 @@ public class ShipSelector : MonoBehaviour {
         FastCam = SpawnedShip.GetComponentInChildren<Camera>();
         FastCam.enabled = true;
         SelectionCamera.enabled = false;
+        Time.timeScale = 1;
+
     }
 
     public void TX21Button()
@@ -39,5 +48,6 @@ public class ShipSelector : MonoBehaviour {
         SlowCam = SpawnedShip.GetComponentInChildren<Camera>();
         SlowCam.enabled = true;
         SelectionCamera.enabled = false;
+        Time.timeScale = 1;
     }
 }

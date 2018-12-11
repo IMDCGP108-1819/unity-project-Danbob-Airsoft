@@ -1,52 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class PlayerHealth : MonoBehaviour
+public class PlanetScript : MonoBehaviour
 {
-    public int Health;
+    public int PlanetHealth = 2;
     private Camera GameOverCamera;
     private CanvasGroup GameOverCanvas;
-    private Camera PlayerCam;
+    private GameObject Player;
     private GameObject Spawner;
     private GameObject Capital;
 
     public void Start()
     {
+        //Get Canvas'
         GameOverCamera = GameObject.Find("GameOverCamera").GetComponent<Camera>();
         GameOverCanvas = GameObject.Find("GameOverCanvas").GetComponent<CanvasGroup>();
         Spawner = GameObject.Find("Enemy Spawn Controller");
         Capital = GameObject.Find("Capital Ship Spawn");
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "CapitalShip" || collision.gameObject.tag == "EnemyLaser")
+        if (collision.gameObject.tag == "CapitalShip")
         {
-            //Reduces health on collision with enemies
-            Health -= 1;
-            
-            if (Health == 0)
+            //Reduces health on collision with Capital Ship
+            PlanetHealth -= 1;
+
+            if (PlanetHealth == 0)
             {
                 //Enables and Switches to Game over canvas
-                PlayerCam = this.GetComponentInChildren<Camera>();
-                PlayerCam.enabled = false;
+                Destroy(Player);
                 GameOverCanvas.alpha = 1f;
                 GameOverCamera.enabled = true;
-                Destroy(this.gameObject);
                 Destroy(Spawner.gameObject); //Destroys the enemy spawner, preventing enemies from spawning after game over
                 Destroy(Capital.gameObject);
+                Debug.Log("Ship Destroyed");
                 GameOverCanvas.interactable = true;
                 GameOverCanvas.blocksRaycasts = true;
             }
-            if (collision.gameObject.tag == "Enemy")
-            {
-                //Disables enemy ships ONLY
-                collision.gameObject.SetActive(false);
-            }
-                
         }
     }
 }

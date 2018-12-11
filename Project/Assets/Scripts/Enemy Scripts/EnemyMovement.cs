@@ -46,12 +46,7 @@ public class EnemyMovement : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "World")
-        {
-            calcuateNewMovementVector();
-        }
-
-        if (collision.gameObject.tag == "Outer Barrier")
+        if (collision.gameObject.tag == "World" || collision.gameObject.tag == "Outer Barrier" || collision.gameObject.tag == "CapitalShip")
         {
             MovementDirection = -MovementDirection;
             MovementPerSecond = MovementDirection * CharacterVelocity;
