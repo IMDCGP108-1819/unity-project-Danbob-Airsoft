@@ -39,6 +39,7 @@ public class PlanetScript : MonoBehaviour
                 Debug.Log("Ship Destroyed");
                 GameOverCanvas.interactable = true;
                 GameOverCanvas.blocksRaycasts = true;
+                Time.timeScale = 0;
             }
         }
     }

@@ -40,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
                 Destroy(Capital.gameObject);
                 GameOverCanvas.interactable = true;
                 GameOverCanvas.blocksRaycasts = true;
+                Time.timeScale = 0;
             }
             if (collision.gameObject.tag == "Enemy")
             {
