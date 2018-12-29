@@ -8,6 +8,7 @@ public class mainMenu : MonoBehaviour
 {
     public CanvasGroup MainMenuGroup;
     public CanvasGroup HowToPlayGroup;
+    public CanvasGroup CreditsGroup;
 
     //Loading next scene on Play Button press
     public void LoadLevel(string SceneToLoad)
@@ -38,6 +39,21 @@ public class mainMenu : MonoBehaviour
         HowToPlayGroup.alpha = 0f;
         HowToPlayGroup.interactable = false;
         HowToPlayGroup.blocksRaycasts = false;
+
+        CreditsGroup.alpha = 0f;
+        CreditsGroup.interactable = false;
+        CreditsGroup.blocksRaycasts = false;
+    }
+
+    public void Credits()
+    {
+        MainMenuGroup.alpha = 0;
+        MainMenuGroup.interactable = false;
+        MainMenuGroup.blocksRaycasts = false;
+
+        CreditsGroup.alpha = 1f;
+        CreditsGroup.interactable = true;
+        CreditsGroup.blocksRaycasts = true;
     }
 
     public void QuitGame()

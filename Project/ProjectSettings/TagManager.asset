@@ -15,6 +15,7 @@ TagManager:
   - UpperCannon
   - LowerCannon
   - EnemyLaser
+  - Inside Checker
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,7 @@ public class EnemyMovement : MonoBehaviour
     private float CharacterVelocity = 20f;
     private Vector2 MovementDirection;
     private Vector2 MovementPerSecond;
-    public GameObject Planet;
+    public bool Inside = false;
 
     void Start()
     {
@@ -46,7 +46,12 @@ public class EnemyMovement : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "World" || collision.gameObject.tag == "Outer Barrier" || collision.gameObject.tag == "CapitalShip")
+        if (collision.gameObject.tag == "Inside Checker")
+        {
+            Inside = true;
+        }
+
+        if (collision.gameObject.tag == "World" || collision.gameObject.tag == "Outer Barrier" || collision.gameObject.tag == "CapitalShip" || collision.gameObject.tag == "Inner Barrier" && Inside == true)
         {
             MovementDirection = -MovementDirection;
             MovementPerSecond = MovementDirection * CharacterVelocity;

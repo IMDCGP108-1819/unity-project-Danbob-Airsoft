@@ -10,6 +10,7 @@ public class PlanetScript : MonoBehaviour
     private GameObject Player;
     private GameObject Spawner;
     private GameObject Capital;
+    public Camera PlayerCam;
 
     public void Start()
     {
@@ -19,6 +20,7 @@ public class PlanetScript : MonoBehaviour
         Spawner = GameObject.Find("Enemy Spawn Controller");
         Capital = GameObject.Find("Capital Ship Spawn");
         Player = GameObject.FindGameObjectWithTag("Player");
+        PlayerCam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,6 +34,7 @@ public class PlanetScript : MonoBehaviour
             {
                 //Enables and Switches to Game over canvas
                 Destroy(Player);
+                PlayerCam.enabled = false;
                 GameOverCanvas.alpha = 1f;
                 GameOverCamera.enabled = true;
                 Destroy(Spawner.gameObject); //Destroys the enemy spawner, preventing enemies from spawning after game over

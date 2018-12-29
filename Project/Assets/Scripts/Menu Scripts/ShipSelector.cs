@@ -10,8 +10,7 @@ public class ShipSelector : MonoBehaviour {
     public GameObject PlayerSpawn;
     public GameObject TX21;
     public Camera SelectionCamera;
-    private Camera FastCam;
-    private Camera SlowCam;
+    public Camera PlayerCam;
     public GameObject CapitalSpawner;
     public GameObject ShipSpawner;
 
@@ -19,11 +18,13 @@ public class ShipSelector : MonoBehaviour {
 
     private void Start()
     {
+        PlayerCam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         Time.timeScale = 0;
     }
 
     public void StarSkipperButton()
     {
+        PlayerCam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         //Creats the faster Player prefab on the Spawn game object
         SpawnedShip = Instantiate(StarSkipper, PlayerSpawn.transform.position, transform.rotation);
         //Hides ship selection menu
@@ -31,8 +32,7 @@ public class ShipSelector : MonoBehaviour {
         ShipSelectorGroup.interactable = false;
         ShipSelectorGroup.blocksRaycasts = false;
         //Gets the camera on the spawned ship and enables it while disabling the camera displaying the ship selection
-        FastCam = SpawnedShip.GetComponentInChildren<Camera>();
-        FastCam.enabled = true;
+        PlayerCam.enabled = true;
         SelectionCamera.enabled = false;
         Time.timeScale = 1;
 
@@ -40,13 +40,13 @@ public class ShipSelector : MonoBehaviour {
 
     public void TX21Button()
     {
+        PlayerCam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         //Same as above but spawns the slower ship prefab
         SpawnedShip = Instantiate(TX21, PlayerSpawn.transform.position, transform.rotation);
         ShipSelectorGroup.alpha = 0f;
         ShipSelectorGroup.interactable = false;
         ShipSelectorGroup.blocksRaycasts = false;
-        SlowCam = SpawnedShip.GetComponentInChildren<Camera>();
-        SlowCam.enabled = true;
+        PlayerCam.enabled = true;
         SelectionCamera.enabled = false;
         Time.timeScale = 1;
     }

@@ -10,13 +10,12 @@ public class EnemySpawning : MonoBehaviour
     public int EnemyNumber;
     List<GameObject> Enemy;
 
-
     void Start()
     {
         Enemy = new List<GameObject>();
         for (int i = 0; i < EnemyNumber; i++)
         {
-            GameObject obj = (GameObject)Instantiate(ShipToSpawn);
+            GameObject obj = Instantiate(ShipToSpawn);
             Enemy.Add(obj);
         }
         // Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
@@ -36,6 +35,7 @@ public class EnemySpawning : MonoBehaviour
                 Enemy[i].transform.position = spawnPoints[spawnPointIndex].position;
                 Enemy[i].transform.rotation = spawnPoints[spawnPointIndex].rotation;
                 Enemy[i].SetActive(true);
+                Enemy[i].GetComponent<EnemyMovement>().Inside = false;
             }
         }
     }

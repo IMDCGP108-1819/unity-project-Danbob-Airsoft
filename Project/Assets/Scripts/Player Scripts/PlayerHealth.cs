@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public int Health;
     private Camera GameOverCamera;
     private CanvasGroup GameOverCanvas;
-    private Camera PlayerCam;
+    public Camera PlayerCam;
     private GameObject Spawner;
     private GameObject Capital;
 
@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
         GameOverCanvas = GameObject.Find("GameOverCanvas").GetComponent<CanvasGroup>();
         Spawner = GameObject.Find("Enemy Spawn Controller");
         Capital = GameObject.Find("Capital Ship Spawn");
+        PlayerCam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,7 +32,6 @@ public class PlayerHealth : MonoBehaviour
             if (Health == 0)
             {
                 //Enables and Switches to Game over canvas
-                PlayerCam = this.GetComponentInChildren<Camera>();
                 PlayerCam.enabled = false;
                 GameOverCanvas.alpha = 1f;
                 GameOverCamera.enabled = true;
