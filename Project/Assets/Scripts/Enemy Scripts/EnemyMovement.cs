@@ -20,6 +20,7 @@ public class EnemyMovement : MonoBehaviour
     {
         latestDirectionChangeTime = 0f;
         calcuateNewMovementVector();
+        Inside = true;
     }
 
     void calcuateNewMovementVector()

@@ -16,6 +16,13 @@ public class CapitalShip : MonoBehaviour
     public float LaserSpeed;
     private Rigidbody2D rigidBody;
     private GameObject SpawnedLaser;
+    public AudioSource AudioSource;
+    public AudioClip LaserClip;
+
+    public void Start()
+    {
+        AudioSource.clip = LaserClip;
+    }
 
     //Boss Movement
     public void Awake()
@@ -64,6 +71,9 @@ public class CapitalShip : MonoBehaviour
         {
             rigidBody.AddForce(-Cannons[CannonsIndex].transform.up * LaserSpeed * Time.deltaTime, ForceMode2D.Impulse);
         }
+        //If the firing sound has ended then replay sound
+        if (!AudioSource.isPlaying) AudioSource.Play();
+
     } 
 
     private IEnumerator CallFiring()

@@ -13,12 +13,14 @@ public class PlayerMovement : MonoBehaviour
     private bool CanFire = true;
     public float FireDelay;
     public Vector3 PlayerRotation;
-
     public Rigidbody2D rigidBody;
+    public AudioSource AudioSource;
+    public AudioClip LaserClip;
 
     void Start()
     {
-        ShootScript = gameObject.GetComponentInChildren<PlayerShooting>();    
+        ShootScript = gameObject.GetComponentInChildren<PlayerShooting>();
+        AudioSource.clip = LaserClip;
     }
 
     void FixedUpdate()
@@ -52,9 +54,15 @@ public class PlayerMovement : MonoBehaviour
     //Prevnting Constant firing
     private IEnumerator FireLaser()
     {
+        //Runs then disables till first run and delay are complete
         CanFire = false;
+        //Runs Shooting script
         ShootScript.Firing(LaserSpeed, MoveDirection, PlayerRotation);
+        //Play sounds
+        AudioSource.Play();
+        //Waits
         yield return new WaitForSeconds(FireDelay);
+        //Enables firing
         CanFire = true;
     }
         

@@ -11,6 +11,7 @@ public class PlanetScript : MonoBehaviour
     private GameObject Spawner;
     private GameObject Capital;
     public Camera PlayerCam;
+    public AudioSource AudioSource;
 
     public void Start()
     {
@@ -21,6 +22,7 @@ public class PlanetScript : MonoBehaviour
         Capital = GameObject.Find("Capital Ship Spawn");
         Player = GameObject.FindGameObjectWithTag("Player");
         PlayerCam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        AudioSource.Play();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
