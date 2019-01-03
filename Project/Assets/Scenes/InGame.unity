@@ -4962,7 +4962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HighScore: 0
   CurrentTime: 0
-  HighScoreText: {fileID: 0}
+  HighScoreText: {fileID: 1300019204}
   SurvivedTime: {fileID: 1708024688}
 --- !u!1001 &1997428318
 Prefab:
