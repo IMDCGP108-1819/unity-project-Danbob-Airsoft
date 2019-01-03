@@ -10,12 +10,13 @@ public class CapitalShipSpawn : MonoBehaviour
 
     void Start()
     {
-        //start off with next spawn time being 'in 5 seconds'
+        //start off with next spawn time being 'in 60 seconds'
         next_spawn_time = Time.time + 60.0f;
     }
 
     void Update()
     {
+        //Check that 60 seconds has passed
         if (Time.time > next_spawn_time)
         {
             //Spawn Capital Ship

@@ -15,14 +15,14 @@ public class PlanetScript : MonoBehaviour
 
     public void Start()
     {
-        //Get Canvas'
+        //Get GameObjects and canvas's
         GameOverCamera = GameObject.Find("GameOverCamera").GetComponent<Camera>();
         GameOverCanvas = GameObject.Find("GameOverCanvas").GetComponent<CanvasGroup>();
         Spawner = GameObject.Find("Enemy Spawn Controller");
         Capital = GameObject.Find("Capital Ship Spawn");
         Player = GameObject.FindGameObjectWithTag("Player");
         PlayerCam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
-        AudioSource.Play();
+        AudioSource.Play(); //Start music
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,15 +36,16 @@ public class PlanetScript : MonoBehaviour
             {
                 //Enables and Switches to Game over canvas
                 Destroy(Player);
+                //Disables game camera
                 PlayerCam.enabled = false;
+                //Shows Game over screen
                 GameOverCanvas.alpha = 1f;
                 GameOverCamera.enabled = true;
-                Destroy(Spawner.gameObject); //Destroys the enemy spawner, preventing enemies from spawning after game over
-                Destroy(Capital.gameObject);
-                Debug.Log("Ship Destroyed");
                 GameOverCanvas.interactable = true;
                 GameOverCanvas.blocksRaycasts = true;
-                Time.timeScale = 0;
+                Destroy(Spawner.gameObject); //Destroys the enemy spawner, preventing enemies from spawning after game over
+                Destroy(Capital.gameObject);
+                Time.timeScale = 0; //Freezes time
             }
         }
     }

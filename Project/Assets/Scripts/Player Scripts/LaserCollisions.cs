@@ -26,6 +26,6 @@ public class LaserCollisions : MonoBehaviour
     }
     void OnDisable()
     {
-        CancelInvoke();
+        CancelInvoke(); //When the laser is diabled stop checking for collisions
     }
 }

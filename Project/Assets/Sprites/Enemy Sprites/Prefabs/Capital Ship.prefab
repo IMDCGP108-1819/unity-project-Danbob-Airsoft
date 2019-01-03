@@ -534,7 +534,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221055661660708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2608051, y: -10.345617, z: 0}
+  m_LocalPosition: {x: -57.36, y: -0.11, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children:
   - {fileID: 4458642297666528}
@@ -636,7 +636,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1000
   m_LinearDrag: 1
   m_AngularDrag: 1
   m_GravityScale: 0
@@ -895,8 +895,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0966d5f3fda6bf34482964dbf018df0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 20
-  BossHealth: 20
+  MoveSpeed: 1000
+  BossHealth: 25
   CapitalLaser: {fileID: 1435354277872074, guid: b33d03f0685b77e4f985a568c9ce28ba,
     type: 2}
   Cannons:

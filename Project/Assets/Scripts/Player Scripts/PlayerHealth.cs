@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Start()
     {
+        //Find canvas's and gameobjects
         GameOverCamera = GameObject.Find("GameOverCamera").GetComponent<Camera>();
         GameOverCanvas = GameObject.Find("GameOverCanvas").GetComponent<CanvasGroup>();
         Spawner = GameObject.Find("Enemy Spawn Controller");

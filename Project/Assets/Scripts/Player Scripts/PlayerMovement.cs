@@ -3,17 +3,20 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //Movement Variables
     public float movespeed;
     public float rotatespeed;
     public GameObject MoveHelp;
     private Vector2 MoveDirection;
     private Vector3 TempMove;
+    //Variables for firing
     private PlayerShooting ShootScript;
     public float LaserSpeed;
     private bool CanFire = true;
     public float FireDelay;
     public Vector3 PlayerRotation;
     public Rigidbody2D rigidBody;
+    //Music Variables
     public AudioSource AudioSource;
     public AudioClip LaserClip;
 

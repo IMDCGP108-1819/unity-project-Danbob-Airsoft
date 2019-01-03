@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    //Spawn at random set spawnpoint
-
-
-    //Random Movement
+    //Setting variables needed for movement
     public float AccelerationTime;
     private float latestDirectionChangeTime;
     private readonly float directionChangeTime = 3f;
-    private float CharacterVelocity = 20f;
+    private float CharacterVelocity = 15f;
     private Vector2 MovementDirection;
     private Vector2 MovementPerSecond;
-    public bool Inside = false;
+    public bool Inside = false; //Allows enemies to enter the field
 
     void Start()
     {
         latestDirectionChangeTime = 0f;
-        calcuateNewMovementVector();
-        Inside = true;
+        calcuateNewMovementVector(); //Calls the function to find a new movement direction
+        Inside = true; //The first wave begins inside the area
     }
 
     void calcuateNewMovementVector()
@@ -47,11 +44,11 @@ public class EnemyMovement : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Inside Checker")
+        if (collision.gameObject.tag == "Inside Checker") //If the enemy hits the invisible barrier around the inside layer then they are counted as inside
         {
             Inside = true;
         }
-
+        //On collisions with world objects and the inner barier only if the enemy is counted as inside then change direction
         if (collision.gameObject.tag == "World" || collision.gameObject.tag == "Outer Barrier" || collision.gameObject.tag == "CapitalShip" || collision.gameObject.tag == "Inner Barrier" && Inside == true)
         {
             MovementDirection = -MovementDirection;
@@ -59,6 +56,7 @@ public class EnemyMovement : MonoBehaviour
             StartCoroutine(WallBounce());
         }
     }
+    //Wait for 2 seconds then find a new random direction
     private IEnumerator WallBounce()
     {
         yield return new WaitForSeconds(2);

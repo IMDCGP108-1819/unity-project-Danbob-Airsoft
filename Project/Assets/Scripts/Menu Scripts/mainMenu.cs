@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class mainMenu : MonoBehaviour
 {
+    //Get Canvas groups
     public CanvasGroup MainMenuGroup;
     public CanvasGroup HowToPlayGroup;
     public CanvasGroup CreditsGroup;
@@ -47,6 +48,7 @@ public class mainMenu : MonoBehaviour
 
     public void Credits()
     {
+        //Same as others but opens credits layer
         MainMenuGroup.alpha = 0;
         MainMenuGroup.interactable = false;
         MainMenuGroup.blocksRaycasts = false;
