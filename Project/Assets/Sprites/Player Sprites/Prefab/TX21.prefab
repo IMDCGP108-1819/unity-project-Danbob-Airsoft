@@ -96,7 +96,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1727093272815214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.877129, y: -1.0072894, z: 0}
+  m_LocalPosition: {x: -338.22095, y: -62.837776, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4388312877372958}
@@ -365,6 +365,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 3
   PlayerCam: {fileID: 0}
+  Planet: {fileID: 0}
+  highScoreScript: {fileID: 0}
 --- !u!212 &212110599224318000
 SpriteRenderer:
   m_ObjectHideFlags: 1

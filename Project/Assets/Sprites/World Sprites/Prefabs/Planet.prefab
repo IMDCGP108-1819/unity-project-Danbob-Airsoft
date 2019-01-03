@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 58853448027713584}
   - component: {fileID: 114306525779289932}
   - component: {fileID: 82304164076859216}
+  - component: {fileID: 114348674475635700}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Planet
@@ -188,6 +189,21 @@ MonoBehaviour:
   PlanetHealth: 2
   PlayerCam: {fileID: 0}
   AudioSource: {fileID: 82304164076859216}
+--- !u!114 &114348674475635700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1897856512994350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c6784909f907949b28f8c58ac7e964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HighScore: 0
+  CurrentTime: 0
+  HighScoreText: {fileID: 0}
+  SurvivedTime: {fileID: 0}
 --- !u!212 &212999119886687446
 SpriteRenderer:
   m_ObjectHideFlags: 1

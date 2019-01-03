@@ -23,6 +23,7 @@ public class PlanetScript : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
         PlayerCam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         AudioSource.Play(); //Start music
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
